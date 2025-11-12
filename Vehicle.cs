@@ -1,6 +1,20 @@
 ﻿namespace BasicOOP
 {
-    internal class Vehicle : IDrivable
+    //internal class Vehicle : IDrivable
+    internal abstract class AbstractVehicle : IDrivable
+    {
+        private int fuel = 50;
+
+        public abstract string Turn();
+
+        public virtual string Drive(int distance)
+        {
+            fuel -= 5;
+            return $"{GetType().Name} drove for {distance} km {fuel} fuel remaining";
+        }
+    }
+
+    internal class Vehicle : AbstractVehicle
     {
         public string Brand { get; set; }
 
@@ -12,6 +26,12 @@
         public virtual string Drive(int distance)
         {
             return $"{GetType().Name} drove for {distance} km";
+        }
+
+        public override string Turn()
+        {
+            return "Turning";
+
         }
     }
     internal class Car : Vehicle, IStoppable
