@@ -4,6 +4,7 @@
     internal abstract class AbstractVehicle : IDrivable
     {
         private int fuel = 50;
+        protected bool ProtectedBool;
 
         public abstract string Turn();
 
@@ -34,7 +35,7 @@
 
         }
     }
-    internal class Car : Vehicle, IStoppable
+    internal/*sealed*/ class Car : Vehicle, IStoppable
     {
         public string Model { get; set; }
 
@@ -60,6 +61,7 @@
 
         public string SpecialMethod()
         {
+            ProtectedBool = true;
             return "From Saab";
         }
     }

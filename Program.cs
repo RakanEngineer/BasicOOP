@@ -18,6 +18,8 @@ namespace BasicOOP
             //Part1();
 
             Saab s = new Saab();
+            //s.ProtectedBool = false; 
+
             //Console.WriteLine(s.Drive(25));
             //Console.WriteLine(s.SpecialMethod());
             //c.SpecialMethod();
