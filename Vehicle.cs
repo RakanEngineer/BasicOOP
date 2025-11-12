@@ -14,13 +14,17 @@
             return $"{GetType().Name} drove for {distance} km";
         }
     }
-    internal class Car : Vehicle
+    internal class Car : Vehicle, IStoppable
     {
         public string Model { get; set; }
 
         public Car(string brand, string model) : base(brand)
         {
             Model = model;
+        }
+        public void Stop()
+        {
+            Console.WriteLine("Car stopped!");
         }
     }
 }
