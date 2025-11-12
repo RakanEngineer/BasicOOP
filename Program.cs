@@ -16,6 +16,44 @@ namespace BasicOOP
             c.Stop();
 
             //Part1();
+
+            Saab s = new Saab();
+            //Console.WriteLine(s.Drive(25));
+            //Console.WriteLine(s.SpecialMethod());
+            //c.SpecialMethod();
+            //v.SpecialMethod(); 
+
+            List<IDrivable> vehicles = new List<IDrivable>
+            {
+                v,
+                s,
+                c
+            };
+
+            foreach (IDrivable vehicle in vehicles)
+            {
+                Console.WriteLine(vehicle.Drive(50));
+
+                //Unsafe case
+                //Saab saab = (Saab)vehicle;
+
+                //Saab saab = vehicle as Saab;
+                //if(saab != null)
+                //
+
+                //if(vehicle is Saab)
+                //{
+                //    Saab saab = (Saab)vehicle; 
+                //    Console.WriteLine(saab.SpecialMethod());
+                //}
+
+                if (vehicle is Saab castedToSaab)
+                    Console.WriteLine(castedToSaab.SpecialMethod());
+
+
+
+            }
+
         }
 
         private static void Part1()
