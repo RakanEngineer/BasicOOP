@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.ConstrainedExecution;
 
 namespace BasicOOP
 {
@@ -7,7 +8,12 @@ namespace BasicOOP
     {
         static void Main(string[] args)
         {
-            Part1();
+            Vehicle v = new Vehicle("Volvo");
+            Console.WriteLine(v.Drive(50));
+            Car c = new Car("BMW", "R39");
+            Console.WriteLine(c.Drive(55));
+
+            //Part1();
         }
 
         private static void Part1()
