@@ -8,6 +8,14 @@ namespace BasicOOP
     {
         static void Main(string[] args)
         {
+            string name = "Kalle";
+            string res = name.AddString("Anka");
+            Console.WriteLine(res);
+
+            string test = "Test";
+            string res2 = test.AddString("Test 2");
+
+            Console.WriteLine(res2);
             Vehicle v = new Vehicle("Volvo");
             Console.WriteLine(v.Drive(50));
             Car c = new Car("BMW", "R39");
