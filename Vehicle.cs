@@ -4,6 +4,7 @@
     internal abstract class AbstractVehicle : IDrivable
     {
         private int fuel = 50;
+
         protected bool ProtectedBool;
 
         public abstract string Turn();
@@ -31,6 +32,7 @@
 
         public override string Turn()
         {
+            ProtectedBool = false;
             return "Turning";
 
         }
